@@ -21,6 +21,15 @@ stages:
     pool:
       vmImage: 'ubuntu-latest'
     steps:
+    - task: Npm@1
+      inputs:
+        command: 'install'
+        workingDir: '$(System.DefaultWorkingDirectory)'
+    - task: Npm@1
+      inputs:
+        command: 'custom'
+        workingDir: '$(System.DefaultWorkingDirectory)'
+        customCommand: 'run build-prod'
     - task: Docker@2
       inputs:
         containerRegistry: 'MyAppRegistry1'
