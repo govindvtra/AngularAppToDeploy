@@ -23,7 +23,7 @@ stages:
     steps:
     - task: Docker@2
       inputs:
-        containerRegistry: 'Docker-Azure'
+        containerRegistry: 'MyAppRegistry1'
         repository: 'govindr007/angular-app-demo'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
