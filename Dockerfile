@@ -1,8 +1,8 @@
 FROM node:alpine AS builder
-WORKDIR /app
-COPY . .
+WORKDIR /home/app
+COPY . /home/app
 RUN npm install
 RUN npm run build-prod
 FROM nginx:alpine
 
-COPY --from=builder /app/dist/todo  /usr/share/nginx/html
+COPY --from=builder /home/app/dist/todo  /usr/share/nginx/html
