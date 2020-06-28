@@ -12,7 +12,7 @@ variables:
   #Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: '72dbcc05-345e-487d-9504-bc6adf93250b'
   imageRepository: 'govindr007/todoangularapp'
-  containerRegistry: 'myappregistry1.azurecr.io'
+  containerRegistry: 'myffazuretraining.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
   tag: '$(Build.BuildId)'
   
@@ -31,7 +31,7 @@ stages:
 
      - task: Docker@2
        inputs:
-         containerRegistry: 'Azure-Registry'
+         containerRegistry: 'Azure Registry'
          repository: '$(imageRepository)'
          command: 'buildAndPush'
          Dockerfile: '$(dockerfilePath)'
